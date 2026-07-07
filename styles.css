@@ -1,5 +1,6 @@
-/* Québecor — refonte concept « la une de l'empire ».
-   Hero frame inédit : masthead de journal + manchette XXL + photo de une légendée.
+/* Québecor — refonte concept « la une de l'empire » v2.
+   Hero immersif : masthead avec le VRAI logo Québecor, photo de une en pleine page,
+   manchette et CTA posés sur la photo. Cahiers avec les vrais logos des marques.
    Palette : papier, encre, bleu Québecor, navy culture-du-possible. Lora + Montserrat. */
 :root {
   --papier: #faf9f6;
@@ -22,30 +23,42 @@ body {
 }
 img { max-width: 100%; display: block; }
 a { color: inherit; }
-h1, h2, h3, .brand, .foot-name { font-family: 'Lora', serif; }
+h1, h2, h3, .foot-name { font-family: 'Lora', serif; }
 
-/* ---------- Hero « la une » ---------- */
-.hero { min-height: 100svh; display: flex; flex-direction: column; }
-.masthead { text-align: center; padding: 18px 22px 0; }
+/* ---------- Hero « la une » v2 ---------- */
+.hero { height: 100svh; display: flex; flex-direction: column; }
+.masthead { text-align: center; padding: 16px 22px 0; }
 .dateline {
   font-size: 0.72rem; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase;
-  color: var(--gris); margin-bottom: 8px;
+  color: var(--gris); margin-bottom: 10px;
 }
-.brand {
-  font-size: clamp(2.4rem, 10vw, 4.4rem);
-  font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-  line-height: 1;
+.brand-logo {
+  display: block; margin: 0 auto;
+  width: clamp(200px, 54vw, 330px); height: auto;
+  color: var(--encre);
 }
-.masthead-rule { height: 4px; background: var(--encre); margin: 12px auto 0; max-width: 1080px; position: relative; }
+.masthead-rule { height: 4px; background: var(--encre); margin: 14px auto 0; max-width: 1080px; position: relative; }
 .masthead-rule::after { content: ""; position: absolute; left: 0; right: 0; bottom: -7px; height: 1px; background: var(--encre); }
 
-.manchette { text-align: center; padding: 26px 22px 20px; max-width: 860px; margin: 0 auto; }
-.manchette h1 {
-  font-size: clamp(1.9rem, 7.2vw, 3.4rem);
-  font-weight: 600; line-height: 1.18;
-  margin-bottom: 12px;
+.une { flex: 1; min-height: 0; position: relative; overflow: hidden; margin-top: 12px; }
+.une img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; }
+.une-scrim {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(20, 22, 26, 0.04) 0%, rgba(20, 22, 26, 0.1) 38%, rgba(16, 26, 38, 0.55) 68%, rgba(14, 22, 32, 0.92) 100%);
 }
-.hero-sub { color: var(--gris); font-size: 0.98rem; max-width: 56ch; margin: 0 auto 20px; }
+.une-content { position: absolute; left: 0; right: 0; bottom: 0; padding: 0 24px 36px; color: #fff; max-width: 860px; }
+.une-caption {
+  font-family: 'Lora', serif; font-style: italic; font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.78); margin-bottom: 10px;
+  padding-left: 12px; border-left: 2px solid rgba(255, 255, 255, 0.55);
+}
+.une-content h1 {
+  font-size: clamp(1.95rem, 7.6vw, 3.4rem);
+  font-weight: 600; line-height: 1.14;
+  margin-bottom: 12px;
+  text-wrap: balance;
+}
+.hero-sub { color: rgba(255, 255, 255, 0.85); font-size: 0.96rem; max-width: 54ch; margin-bottom: 20px; }
 
 .btn-primary {
   display: inline-block;
@@ -57,40 +70,46 @@ h1, h2, h3, .brand, .foot-name { font-family: 'Lora', serif; }
   transition: transform 0.16s ease, background 0.16s ease;
 }
 .btn-primary:hover, .btn-primary:focus-visible { transform: translateY(-2px); background: #0c5cb8; }
-.cta-links { font-size: 0.9rem; color: var(--gris); margin-top: 12px; }
-.cta-links a { color: var(--encre); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-
-.photo-une { flex: 1; min-height: 34svh; margin: 6px 0 0; position: relative; overflow: hidden; }
-.photo-une img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 40%; }
-.photo-une figcaption {
-  position: absolute; left: 0; right: 0; bottom: 0;
-  font-size: 0.82rem; font-style: italic; font-family: 'Lora', serif;
-  color: #fff; padding: 26px 22px 12px;
-  background: linear-gradient(transparent, rgba(20, 22, 26, 0.65));
-}
+.cta-links { font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); margin-top: 12px; }
+.cta-links a { color: #fff; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.cta-links.dark { color: var(--gris); }
+.cta-links.dark a { color: var(--encre); }
 
 .stagger { opacity: 0.012; transform: translateY(14px); animation: rise 0.7s ease-out forwards; }
 .s1 { animation-delay: 0.08s; } .s2 { animation-delay: 0.24s; } .s3 { animation-delay: 0.4s; }
 .s4 { animation-delay: 0.54s; } .s5 { animation-delay: 0.7s; }
 @keyframes rise { to { opacity: 1; transform: translateY(0); } }
 
-/* ---------- Les cahiers ---------- */
+/* ---------- Les cahiers (vrais logos) ---------- */
 .cahiers { padding: 70px 22px 60px; max-width: 1080px; margin: 0 auto; }
 .kicker {
   font-size: 0.74rem; font-weight: 700; letter-spacing: 0.24em; text-transform: uppercase;
-  color: var(--bleu); margin-bottom: 20px; text-align: center;
+  color: var(--bleu); margin-bottom: 10px; text-align: center;
 }
-.kicker.light { color: #9fc3e8; text-align: left; }
-.cahier-grid { list-style: none; border-top: 3px double var(--encre); }
-.cahier-grid li { border-bottom: 1px solid var(--filet); }
+.kicker.light { color: #9fc3e8; text-align: left; margin-bottom: 20px; }
+.cahiers-intro {
+  font-family: 'Lora', serif; font-style: italic; text-align: center;
+  color: var(--gris); font-size: 1.02rem; margin-bottom: 24px;
+}
+.cahier-grid {
+  list-style: none;
+  border-top: 3px double var(--encre); padding-top: 22px;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;
+}
 .cahier-grid a {
-  display: flex; flex-direction: column; gap: 2px;
-  padding: 18px 4px; text-decoration: none;
-  transition: background 0.15s ease, padding-left 0.15s ease;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px;
+  background: #fff; border: 1px solid var(--filet);
+  padding: 24px 14px 18px; min-height: 132px;
+  text-decoration: none; text-align: center;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
 }
-.cahier-grid a:hover { background: rgba(10, 79, 158, 0.05); padding-left: 12px; }
-.c-name { font-family: 'Lora', serif; font-weight: 700; font-size: clamp(1.3rem, 5vw, 1.9rem); }
-.c-desc { color: var(--gris); font-size: 0.9rem; }
+.cahier-grid a:hover, .cahier-grid a:focus-visible {
+  transform: translateY(-4px); border-color: var(--bleu);
+  box-shadow: 0 14px 30px rgba(20, 22, 26, 0.1);
+}
+.c-logo { height: 42px; display: flex; align-items: center; justify-content: center; }
+.c-logo img { max-height: 42px; width: auto; }
+.c-desc { color: var(--gris); font-size: 0.78rem; line-height: 1.45; }
 
 /* ---------- Chiffres en une ---------- */
 .chiffres {
@@ -141,8 +160,8 @@ h1, h2, h3, .brand, .foot-name { font-family: 'Lora', serif; }
 
 /* ---------- Desktop ---------- */
 @media (min-width: 860px) {
-  .cahier-grid { columns: 2; column-gap: 46px; }
-  .cahier-grid li { break-inside: avoid; }
+  .une-content { left: 50%; transform: translateX(-50%); padding: 0 32px 52px; }
+  .cahier-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; }
   .chiffres { grid-template-columns: repeat(3, 1fr); }
   .culture { grid-template-columns: 1fr 1fr; }
   .culture-text { padding: 80px 48px; align-self: center; }
