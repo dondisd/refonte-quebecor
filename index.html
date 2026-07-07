@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" as="image" href="assets/une-portrait.webp" media="(max-width: 859px)" fetchpriority="high">
-  <link rel="preload" as="image" href="assets/une.webp" media="(min-width: 860px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/une.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/une-blur.webp">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -28,13 +28,9 @@
         <div class="masthead-rule stagger s1"></div>
       </header>
       <figure class="une stagger s2">
-        <picture>
-          <source media="(min-width: 860px)" srcset="assets/une.webp">
-          <img src="assets/une-portrait.webp" alt="Un couple devant la télévision dans un salon montréalais" width="1080" height="1920" fetchpriority="high" loading="eager">
-        </picture>
-        <div class="une-scrim" aria-hidden="true"></div>
+        <img class="une-photo" src="assets/une.webp" alt="Un couple devant la télévision dans un salon montréalais" width="1280" height="720" fetchpriority="high" loading="eager">
+        <figcaption class="une-caption stagger s3">Chaque soir, dans les salons du Québec.</figcaption>
         <div class="une-content">
-          <p class="une-caption stagger s3">Chaque soir, dans les salons du Québec.</p>
           <h1 class="stagger s3">Le quotidien de millions de Québécois se fabrique&nbsp;ici.</h1>
           <p class="hero-sub stagger s4">La télé de vos soirées, l'internet qui vous relie, le journal de votre café du matin : une seule maison, plus de 10&nbsp;000 personnes.</p>
           <div class="hero-cta stagger s5">
