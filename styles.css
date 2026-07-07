@@ -81,9 +81,9 @@ h1, h2 { font-weight: 800; letter-spacing: -0.02em; }
 .hero-meta { color: var(--gris); font-size: 0.95rem; font-weight: 600; margin-bottom: 18px; }
 .hero-cta { display: flex; align-items: center; gap: 10px; margin-bottom: 22px; }
 
-.une { flex: 1; min-height: 0; position: relative; }
+.une { flex: 1; min-height: 0; position: relative; display: flex; flex-direction: column; }
 .une-photo {
-  width: 100%; height: 100%; min-height: 240px; object-fit: cover; object-position: 50% 38%;
+  flex: 1; width: 100%; min-height: 240px; object-fit: cover; object-position: 50% 38%;
   border-radius: var(--r-image);
 }
 .une-chip {
