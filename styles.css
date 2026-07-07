@@ -1,3 +1,11 @@
+@font-face { font-family: 'Lora'; font-style: italic; font-weight: 400; font-display: swap; src: url('assets/fonts/lora-400-italic.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 400; font-display: swap; src: url('assets/fonts/lora-400.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 600; font-display: swap; src: url('assets/fonts/lora-600.woff2') format('woff2'); }
+@font-face { font-family: 'Lora'; font-style: normal; font-weight: 700; font-display: swap; src: url('assets/fonts/lora-700.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 400; font-display: swap; src: url('assets/fonts/montserrat-400.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 600; font-display: swap; src: url('assets/fonts/montserrat-600.woff2') format('woff2'); }
+@font-face { font-family: 'Montserrat'; font-style: normal; font-weight: 700; font-display: swap; src: url('assets/fonts/montserrat-700.woff2') format('woff2'); }
+
 /* Québecor — refonte concept « la une de l'empire » v2.
    Hero immersif : masthead avec le VRAI logo Québecor, photo de une en pleine page,
    manchette et CTA posés sur la photo. Cahiers avec les vrais logos des marques.
