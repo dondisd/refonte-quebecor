@@ -44,9 +44,7 @@ h1, h2, h3, .foot-name { font-family: 'Lora', serif; }
   flex: 1; min-height: 0; margin-top: 12px; overflow: hidden;
   display: flex; flex-direction: column;
   padding: 20px 18px 34px; color: #fff;
-  background:
-    linear-gradient(180deg, rgba(20, 22, 26, 0.22) 0%, rgba(16, 26, 38, 0.5) 45%, rgba(13, 21, 31, 0.92) 100%),
-    url('assets/une-blur.webp') 50% 30% / cover no-repeat #12202e;
+  background: linear-gradient(180deg, #2a3f54 0%, #17242f 52%, #0e161f 100%);
 }
 .une-photo {
   width: 100%; height: auto; max-width: 880px; margin: 0 auto;
