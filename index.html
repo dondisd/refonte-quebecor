@@ -12,7 +12,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
-  <link rel="preload" as="image" href="assets/une-800.webp" imagesrcset="assets/une-800.webp 800w, assets/une.webp 1280w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/une-portrait.webp" media="(max-width: 859px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/une.webp" media="(min-width: 860px)" fetchpriority="high">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -27,7 +28,10 @@
         <div class="masthead-rule stagger s1"></div>
       </header>
       <figure class="une stagger s2">
-        <img src="assets/une.webp" srcset="assets/une-800.webp 800w, assets/une.webp 1280w" sizes="100vw" alt="Un couple devant la télévision dans un salon montréalais" width="1280" height="720" fetchpriority="high" loading="eager">
+        <picture>
+          <source media="(min-width: 860px)" srcset="assets/une.webp">
+          <img src="assets/une-portrait.webp" alt="Un couple devant la télévision dans un salon montréalais" width="1080" height="1920" fetchpriority="high" loading="eager">
+        </picture>
         <div class="une-scrim" aria-hidden="true"></div>
         <div class="une-content">
           <p class="une-caption stagger s3">Chaque soir, dans les salons du Québec.</p>
